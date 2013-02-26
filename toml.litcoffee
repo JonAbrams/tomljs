@@ -16,6 +16,12 @@ I hope it's useful and/or educational. It should be understandable for beginner 
 - [regex](http://www.diveintojavascript.com/articles/javascript-regular-expressions)
 - [recursion]().
 
+## How to use the library
+
+Include toml.js in your html file, then invoke TOML.parse(toml_input).
+
+See the test.html file in this repo.
+
 ## Some regex info
 
 If you're new to regex is might help to know the following patterns that I make heavy use of:
@@ -32,6 +38,12 @@ Either because I think parsers should be forgiving in what they accept (and enco
 ### What's with all the words? I just care about the code.
 
 If you don't like all the text, and just care about the code, look at the compiled JS or use js2coffee to convert it back to vanilla CoffeeScript. Maybe someone will make a litcoffee to coffee converter.
+
+## Todo
+
+- Tests
+- Encoder
+- Find more boundary conditions and weird errors
 
 ## License
 
