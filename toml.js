@@ -6,7 +6,7 @@ window.TOML = {};
 TOML.parse = function(text) {
   var addKey, equalsIndex, isArray, key, keygroup, line, lineNum, obj, processArray, strTokens, val, value, _i, _len, _ref;
   obj = {};
-  text = text.replace(/^\s\s*/gm, '').replace(/\s\s*$/gm, '');
+  text = text.replace(/^\s\s*/gm, "").replace(/\s\s*$/gm, "");
   strTokens = [];
   text = text.replace(/"(?:\\[^\n]|[^"\n])*"/g, function(str) {
     str = str.slice(0, str.length - 1).slice(1);
