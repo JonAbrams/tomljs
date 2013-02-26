@@ -22,6 +22,8 @@ Include toml.js in your html file, then invoke TOML.parse(toml_input).
 
 See the test.html file in this repo.
 
+It's also available in a [live demo](http://tomljs.s3-website-us-east-1.amazonaws.com/).
+
 ## Some regex info
 
 If you're new to regex is might help to know the following patterns that I make heavy use of:
