@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      textarea {
+        display: block;
+        width: 408px;
+        height: 442px;
+      }
+
+      #encode {
+        display: block;
+        margin: 20px;
+        margin-left: 160px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    Given this TOML:
+    <textarea id="input">
+# Example:
+title = "TOML Example"
+
+[owner]
+name = "Tom Preston-Werner"
+organization = "GitHub"
+bio = "GitHub Cofounder & CEO\nLikes tater tots and beer."
+dob = 1979-05-27T07:32:00Z # First class dates? Why not?
+
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
+
+[servers]
+
+  # You can indent as you please. Tabs or spaces. TOML don't care.
+  [servers.alpha]
+  ip = "10.0.0.1"
+  dc = "eqdc10"
+
+  [servers.beta]
+  ip = "10.0.0.2"
+  dc = "eqdc10"
+
+[altserver.us.ca.sf]
+ip = "192.168.0.1"
+
+[clients]
+data = [ ["gamma", "delta"], [1, 2] ] # just an update to make sure parsers support it
+    </textarea>
+    <button id="encode">Re-encode</button>
+    Is turned into this (using JSON):
+    <textarea id="output" disabled="disabled"></textarea>
+    <script src="toml.js"></script>
+    <script type="text/javascript">
+      var encode = function () {
+        var toml_input = document.getElementById("input").value
+        try {
+          var obj = TOML.parse(toml_input)
+          output = JSON.stringify(obj, null, 4);
+        } catch (error) {
+          output = error;
+        }
+        document.getElementById("output").value = output;
+      };
+      encode();
+      encodeButton = document.getElementById("encode")
+      encodeButton.addEventListener("click", encode, false);
+    </script>
+  </body>
+</html>
