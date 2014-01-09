@@ -135,6 +135,7 @@ Look for the _=_ sign, allowing for whitespace in front or behind it.
           \s*=\s*
 
 Then a quick sanity check to make sure the value being assigned has at least a valid first character. In other words, the beginning of a string *"*, the beginning of an array *[*, a number, or a boolean.
+
           [string\d|\[\d]|true|false
         ///
           throw "Invalid statement on line #{lineNum}"
